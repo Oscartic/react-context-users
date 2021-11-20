@@ -1,22 +1,27 @@
 import './App.css';
 
+//components
+import Profile from './components/Profile';
+import UserList from './components/UserList';
+// Context
+import UserState from './context/User/UserState';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserState>
+      <div className="container p-4">
+        <div className="row">
+          <div className="col-md-7">
+            <UserList />
+          </div>
+          <div className="col-md-5">
+            <Profile />
+          </div>
+        </div>
+      </div> 
+    </UserState>
   );
 }
 
